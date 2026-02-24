@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setAttribute() vs getAttribute()</title>
+</head>
+<body>
+    <h2>Hello KS25-CNTT3</h2>
+
+    <script>
+        let h2Tag = document.getElementsByTagName("h2")[0];
+        console.log(h2Tag);
+        let greeting = h2Tag.setAttribute("id", "greeting");
+
+        let h2TagVer2 = document.getElementById("greeting");
+        console.log(h2TagVer2);
+    </script>
+</body>
+</html>

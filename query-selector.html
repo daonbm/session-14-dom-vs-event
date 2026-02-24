@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>querySeletor()</title>
+    <style>
+        * {
+            margin: 0;
+        }
+
+        .menu-item {
+            display: inline-block;
+            width: 18%;
+            color: white;
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <ul id="menu">
+        <li class="menu-item">Trang chủ</li>
+        <li class="menu-item">Về shop</li>
+        <li class="menu-item">Thời trang nữ</li>
+        <li class="menu-item">Thời trang nam</li>
+        <li class="menu-item">Liên hệ</li>
+    </ul>
+
+    <script>
+        let firstLiTag = document.querySelector(".menu-item");
+        console.log(firstLiTag);
+
+        let liTags = document.querySelectorAll(".menu-item");
+        console.log(liTags);
+
+        for (let i = 0; i < liTags.length; i++) {
+            console.log(liTags[i].innerHTML);
+        }
+    </script>
+</body>
+</html>
