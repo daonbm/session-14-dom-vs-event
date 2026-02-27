@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Event with addEventListener() method</title>
+</head>
+<body>
+    <!-- onclick example -->
+    <button id="greetingBtn">Say Hello</button>
+    <br><br>
+
+    <!-- onchange example -->
+    <input type="text" id="name" placeholder="Enter your name">
+    <br><br>
+
+    <!-- onsubmit example --> 
+    <form action="/submit-page" method="POST" id="myForm">
+        Enter name: <input type="text" id="nameInput" required>
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        // onclick with addEventListener
+        let greetingBtn = document.getElementById("greetingBtn");
+        greetingBtn.addEventListener("click", sayHelloClass);
+
+        function sayHelloClass() {
+            alert("Hello HCM-KS25-CNTT3 class");
+        }
+
+        // onchange with addEventListener
+        let nameInput = document.getElementById("name");
+        nameInput.addEventListener("change", upperCaseName);
+
+        function upperCaseName() {
+            nameInput.value = nameInput.value.toUpperCase();
+        }
+
+        // onsubmit with addEventListener
+        // Wait for the DOM to be fully loaded
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const form = document.getElementById("myForm");
+
+            form.addEventListener("submit", function (event) {
+                const name = document.getElementById("nameInput").value;
+
+                if (name === "" || name === null) {
+                    alert("Name must be filled out");
+                    event.preventDefault(); // Prevent the default form submission
+                }
+                // If validation passes, the form will submit automatically
+            });
+        });
+
+    </script>
+</body>
+</html>
